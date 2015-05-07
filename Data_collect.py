@@ -4,34 +4,17 @@ this file can use either json or pickle to save dictionaries. uncomment
 the one that will be used and comment out or remove the other.
 '''
 from __future__ import with_statement
-import json
+import json, stock
 #import cPickle as pickle
 
-data_store = {}
+
 userPart = raw_input('Please enter a part number: ').upper()
-
-try:
-    with open('jparts_data.json', 'r') as fh:
-        data_store = json.load(fh)
-except IOError:
-    with open('jparts_data.json', 'w') as fh:
-        json.dump(data_store, fh)
-
-'''
-try:
-    with open('parts_data.txt', 'rb') as fh:
-        data_store = pickle.load(fh)
-        print(data_store)
-except IOError:
-    with open('parts_data.txt', 'wb') as fh:
-        pickle.dump(data_store, fh, 0)
-'''
 
 # Take the user input and returns or stores the appropriate values
 def live_or_die(user_part, parts):
-    user_description =""
 
-    print(parts)
+    user_description = ""
+
 
     if parts == {}:
         user_description = raw_input('Please enter a description: ')
@@ -44,4 +27,4 @@ def live_or_die(user_part, parts):
     print(parts)
     #for key in partDict:
 
-live_or_die(userPart, data_store)
+live_or_die(userPart, stock.main())
