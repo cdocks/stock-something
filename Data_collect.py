@@ -8,7 +8,7 @@ import json, stock
 #import cPickle as pickle
 
 
-userPart = raw_input('Please enter a part number: ').upper()
+#userPart = raw_input('Please enter a part number: ').upper()
 
 # Take the user input and returns or stores the appropriate values
 def live_or_die(user_part, parts):
@@ -27,4 +27,4 @@ def live_or_die(user_part, parts):
     print(parts)
     #for key in partDict:
 
-live_or_die(userPart, stock.main())
+#live_or_die(userPart, stock.main())
